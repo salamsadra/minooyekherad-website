@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07182d">
+    <title>انتشارات مینوی خرد | Minooye Kherad</title>
+
+    <style>
+        @font-face {
+            font-family: "W Lotus";
+            src: url("W_lotus.TTF") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        :root {
+            --bg: #041225;
+            --bg-deep: #020b18;
+            --surface: #081b32;
+            --surface-2: #0b2340;
+            --paper: #f4f1ea;
+            --paper-soft: #e9e6de;
+            --ink: #10233b;
+            --ink-soft: #43556a;
+            --text: #edf2f7;
+            --muted: #aebdcb;
+            --accent: #caa45f;
+            --accent-soft: #dfc27e;
+            --line: rgba(220, 230, 240, .13);
+            --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "W Lotus", "Vazirmatn", Tahoma, sans-serif;
+            background:
+                radial-gradient(circle at 85% 0%, rgba(35, 68, 105, .12), transparent 34rem),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.85;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        body, button, a, input { font-variant-numeric: normal; }
+
+        body, body * {
+            font-family: "W Lotus", "Vazirmatn", Tahoma, sans-serif;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .number {
+            font-family: "B Nazanin", "Nazanin", serif !important;
+            font-weight: 400;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .hero-nav {
+            font-family: Arial, sans-serif;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        button { font: inherit; }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 20, 38, .92);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .header-inner {
+            max-width: 1380px;
+            min-height: 94px;
+            margin: 0 auto;
+            padding: 0 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            width: 58px;
+            height: 58px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-text {
+            color: var(--accent-soft);
+            font-size: 1.72rem;
+            letter-spacing: -.025em;
+            white-space: nowrap;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            font-size: 1.04rem;
+            color: #dce6ef;
+        }
+
+        .header-nav a {
+            position: relative;
+            padding: 7px 0;
+            opacity: .78;
+            transition: opacity .2s ease, color .2s ease;
+        }
+
+        .header-nav a::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width .25s ease;
+        }
+
+        .header-nav a:hover {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .header-nav a:hover::after { width: 100%; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(2, 11, 24, .99), rgba(6, 25, 45, .98)),
+                var(--bg-deep);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-inner {
+            width: min(1380px, 100%);
+            margin: 0 auto;
+            padding: 72px 86px 54px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(270px, .85fr);
+            gap: 80px;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-text {
+            min-width: 0;
+            transition: opacity .35s ease, transform .35s ease;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--accent);
+            font-size: .94rem;
+            margin-bottom: 16px;
+            letter-spacing: .02em;
+        }
+
+        .hero-kicker::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--accent);
+            opacity: .75;
+        }
+
+        .hero-text h1 {
+            color: #f7f8fa;
+            font-size: clamp(2.15rem, 4vw, 3.35rem);
+            line-height: 1.32;
+            font-weight: 400;
+            margin-bottom: 18px;
+            max-width: 760px;
+        }
+
+        .hero-text .subtitle {
+            color: var(--accent-soft);
+            font-size: 1.03rem;
+            margin-bottom: 18px;
+        }
+
+        .hero-text .desc {
+            color: #d2dce6;
+            font-size: 1.02rem;
+            line-height: 2.02;
+            max-width: 780px;
+            margin-bottom: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .hero-meta {
+            color: var(--accent);
+            font-size: .92rem;
+            font-family: "W Lotus", "Vazirmatn", Tahoma, sans-serif;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .hero-cover {
+            display: flex;
+            justify-content: center;
+            transition: opacity .35s ease, transform .35s ease;
+        }
+
+        .book-cover-large {
+            width: 320px;
+            height: 455px;
+            overflow: hidden;
+            border-radius: 4px;
+            background: transparent;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .book-cover-large img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            opacity: 1;
+            filter: none;
+            mix-blend-mode: normal;
+        }
+
+        /* مجموعۀ سه‌جلدی: حفظ نسبت تصویر اصلی بدون برش */
+        .book-cover-large.collection-cover {
+            width: 440px;
+            height: 310px;
+            background: #fff;
+        }
+
+        .book-cover-large.collection-cover img {
+            object-fit: contain;
+        }
+
+        .hero-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(230,238,245,.18);
+            border-radius: 50%;
+            background: rgba(8, 26, 49, .18);
+            color: rgba(237,242,247,.75);
+            cursor: pointer;
+            transition: all .2s ease;
+            z-index: 3;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .hero-nav:hover {
+            color: #fff;
+            border-color: rgba(217,189,121,.55);
+            background: rgba(217,189,121,.08);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .hero-nav.prev { right: 28px; }
+        .hero-nav.next { left: 28px; }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 28px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            padding: 0 20px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(237,242,247,.28);
+            cursor: pointer;
+            transition: all .25s ease;
+        }
+
+        .dot.active {
+            width: 20px;
+            border-radius: 8px;
+            background: var(--accent);
+        }
+
+        /* ===== GENERAL SECTIONS ===== */
+        section { padding: 78px 0; }
+
+        .section-inner {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 34px;
+        }
+
+        .section-title {
+            color: #f1f4f7;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 38px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            display: none;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 760px;
+            margin: -18px 0 36px auto;
+            font-size: .98rem;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-section {
+            background: #0b2038;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 38px 42px;
+            background: rgba(255,255,255,.025);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: 0 18px 55px rgba(0,0,0,.12);
+        }
+
+        .about-content p {
+            margin-bottom: 1.45em;
+            font-size: 1.04rem;
+            color: #d7e0e8;
+            text-align: justify;
+            font-family: "W Lotus", "Vazirmatn", Tahoma, sans-serif;
+            font-weight: 400;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .about-content p:last-child { margin-bottom: 0; }
+
+        .about-content p span,
+        .about-content p .num {
+            font-family: inherit !important;
+            font-variant-numeric: normal !important;
+            font-feature-settings: normal !important;
+        }
+
+        .about-content p .number {
+            font-family: "B Nazanin", "Nazanin", serif !important;
+        }
+
+        /* ===== CATALOG ===== */
+        .catalog-section { background: var(--bg); }
+
+        .catalog-group {
+            margin-bottom: 72px;
+        }
+
+        .catalog-group:last-child { margin-bottom: 0; }
+
+        .catalog-group-title {
+            color: var(--accent-soft);
+            font-size: 1.45rem;
+            font-weight: 400;
+            margin-bottom: 28px;
+            padding-bottom: 13px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 42px 25px;
+        }
+
+        .book-card {
+            min-width: 0;
+            cursor: pointer;
+            transition: transform .25s ease;
+        }
+
+        .book-card:hover { transform: translateY(-6px); }
+
+        .book-cover {
+            aspect-ratio: 1.9 / 3;
+            overflow: hidden;
+            border-radius: 3px;
+            background: #152c46;
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow: 0 12px 28px rgba(0,0,0,.22);
+            margin-bottom: 14px;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .book-card:hover .book-cover img { transform: scale(1.025); }
+
+        .book-info h3 {
+            color: #edf2f7;
+            font-size: 1.03rem;
+            font-weight: 400;
+            line-height: 1.55;
+            text-align: center;
+            margin-bottom: 9px;
+            min-height: calc(1.55em * 3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-meta {
+            direction: ltr;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            color: #aebdcb;
+            font-size: .82rem;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            padding-bottom: 8px;
+            margin-bottom: 9px;
+            font-family: "W Lotus", "Vazirmatn", Tahoma, sans-serif;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .book-meta span {
+            direction: rtl;
+            white-space: nowrap;
+            font-family: inherit;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .book-meta .stop {
+            color: #c9b48a;
+        }
+
+        .book-meta.publication-meta {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 2px;
+        }
+
+        .other-meta {
+            justify-content: center;
+        }
+
+        .other-meta span {
+            color: #aebdcb;
+        }
+
+        .empty-note {
+            color: var(--muted);
+            padding: 28px 0;
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            min-width: 36px;
+            height: 36px;
+            padding: 0 9px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: transparent;
+            color: #cfd9e3;
+            cursor: pointer;
+            transition: all .2s ease;
+            font-family: "W Lotus", "Vazirmatn", Tahoma, sans-serif;
+            font-variant-numeric: normal;
+            font-feature-settings: normal;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            border-color: rgba(217,189,121,.5);
+            color: var(--accent-soft);
+        }
+
+        .pagination .page-num.active {
+            background: var(--accent);
+            color: #17263a;
+            border-color: var(--accent);
+        }
+
+        .pagination button:disabled {
+            opacity: .25;
+            cursor: default;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #061426;
+            color: #aebdcb;
+            padding: 54px 0 28px;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 34px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand .logo-text {
+            display: block;
+            color: var(--accent-soft);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            max-width: 380px;
+            opacity: .78;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: #edf2f7;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col li { margin-bottom: 8px; }
+
+        .footer-col a {
+            opacity: .75;
+            transition: opacity .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .footer-col a svg {
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .footer-col a:hover { opacity: 1; color: var(--accent-soft); }
+
+        .footer-bottom {
+            max-width: 1380px;
+            margin: 42px auto 0;
+            padding: 18px 34px 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: .82rem;
+            opacity: .5;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1150px) {
+            .books-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .hero-inner { padding-left: 70px; padding-right: 70px; gap: 55px; }
+        }
+
+        @media (max-width: 860px) {
+            .header-inner { min-height: 82px; padding: 0 22px; }
+            .header-nav { gap: 18px; font-size: .95rem; }
+            .logo-img { width: 50px; height: 50px; }
+            .logo-text { font-size: 1.45rem; }
+
+            .hero { min-height: auto; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 54px 55px 70px;
+                gap: 36px;
+            }
+            .hero-cover { order: -1; }
+            .book-cover-large { width: 245px; height: 350px; }
+            .book-cover-large.collection-cover { width: 350px; height: 245px; }
+            .hero-text .desc { margin-left: auto; margin-right: auto; text-align: justify; }
+            .hero-nav.prev { right: 14px; }
+            .hero-nav.next { left: 14px; }
+
+            .books-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 600px) {
+            body { font-size: 16px; }
+            .header-inner { flex-direction: column; justify-content: center; gap: 4px; padding: 12px 18px; }
+            .header-nav { gap: 20px; }
+            .logo-text { font-size: 1.3rem; }
+
+            section { padding: 58px 0; }
+            .section-inner { padding: 0 18px; }
+            .section-title { font-size: 1.65rem; }
+
+            .hero-inner { padding: 44px 46px 70px; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-text .desc { font-size: .96rem; line-height: 1.9; }
+            .book-cover-large { width: 205px; height: 292px; }
+            .book-cover-large.collection-cover { width: 292px; height: 205px; }
+
+            .books-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 15px; }
+            .book-info h3 { font-size: .95rem; }
+            .book-meta { font-size: .73rem; }
+
+            .about-content { padding: 24px 20px; }
+            .about-content p { font-size: .98rem; }
+
+            .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+            .footer-brand { grid-column: auto; }
+            .footer-bottom { flex-direction: column; padding-left: 18px; padding-right: 18px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-inner">
+            <a class="logo-area" href="#featured" aria-label="انتشارات مینوی خرد">
+                <div class="logo-img">
+                    <img src="لوگو انتشارات برای کتاب ها 2.png" alt="لوگوی انتشارات مینوی خرد">
+                </div>
+                <span class="logo-text">انتشارات مینوی خرد</span>
+            </a>
+
+            <nav class="header-nav" aria-label="ناوبری اصلی">
+                <a href="#about">معرفی</a>
+                <a href="#catalog">فهرست آثار</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="featured">
+        <div class="hero-inner" id="heroSlide">
+            <button class="hero-nav prev" id="heroPrev" aria-label="اثر قبلی">‹</button>
+            <button class="hero-nav next" id="heroNext" aria-label="اثر بعدی">›</button>
+
+            <div class="hero-text" id="heroText">
+                <h1 id="heroTitle">مشروطیت قدیم و جدید</h1>
+                <p class="desc" id="heroDesc"></p>
+                <div class="hero-meta" id="heroYear"></div>
+            </div>
+
+            <div class="hero-cover" id="heroCoverContainer">
+                <div class="book-cover-large" id="heroCoverBox">
+                    <img id="heroImg" src="مشروطیت قدیم و جدید.jpg" alt="مشروطیت قدیم و جدید">
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots" id="heroDots" aria-label="انتخاب اثر"></div>
+    </section>
+
+    <!-- ===== معرفی انتشارات ===== -->
+    <section class="about-section" id="about">
+        <div class="section-inner">
+            <h2 class="section-title">معرفی انتشارات</h2>
+            
+        
+            
+            <div class="about-content">
+                <p>هدف از برنامه‌ریزی مؤثر برای ایجاد یک نشر پدیدآورنده دستیابی به کمال مطلوب است لیکن تصور جهان کاملی که در آن همۀ چیزها تحقق‌پذیرند غیرقابل حصول و غیرقابل درک است و بنیاد هر کاری برای ایجاد آن مغالطۀ بزرگ فکری است. اما به هر حال هر بنیاد علمی‌ای همچون نشر کتاب به وجهی از کمال نظر دارد. </p>
+                <p>موضوع یا حوزۀ هر دانشی را نوع پرسش‌هایی تعیین می‌کند که آن علم برای پاسخ گفتن به آن ابداع شده است. طبقه‌ای از پرسش‌ها به این شرط معقول و قابل فهم‌اند که بدانیم چگونه باید شروع به یافتن پاسخ کنیم. </p>
+                <p>طبقۀ دیگری از پرسش‌ها نیز وجود دارد که در مورد آنها نیز به وضوح می‌دانیم که از چه راهی باید به جست‌وجوی پاسخ برویم. چون حوزۀ آنها بر پایۀ بعضی اصول موضوعی ثابت و برخی قواعد استنتاج و استقراء تعریف می‌شود و پاسخ مسائل با کاربرد آن قواعد به شیوۀ درست به دست می‌آید. نشانۀ بزرگ این حوزه‌های اندیشۀ بشری این است که وقتی پرسشی مطرح شد، می‌دانیم برای یافتن پاسخ در چه جهتی پیش برویم و کجا پاسخ را بیابیم. سرگذشت اندیشۀ سیستماتیک بشر تاریخ کوشش‌های مداوم به منظور صورت‌بندی همۀ پرسش‌های بشری است به نحوی که یا پاسخ‌هایشان به محصولی که از مشاهده به دست می‌آید بستگی دارد و یا پاسخ به پرسش‌های صوری در حوزه‌هایی مانند منطق و دستور زبان مربوط است. برخی پرسش‌ها نیز در این رده‌بندی نمی‌گنجند و با پرسش‌های دو دستۀ دیگر به سهولت سازگار نمی‌شوند. بعضی از آنها مسائلی هستند مربوط به امور واقع و برخی مربوط به ارزش‌ها و بعضی به نمادها و برخی دربارۀ روش‌های معمول در حوزه‌های مختلف معرفت. بعضی با پیش فرض‌های تفکر سروکار دارند و برخی با ماهیت و هدف‌های کنش اخلاقی یا اجتماعی یا سیاسی. تنها خصلت مشترک همۀ این مسائل این است که نه می‌توان آنها را با مشاهده و محاسبه پاسخ داد و نه به روش استقرایی و نه به روش قیاسی. این گونه پرسش‌ها را در دستۀ پرسش‌های فلسفی قرار می‌دهند. اگر تاریخ معرفت بشری محصول تلاش مداوم برای گنجانیدن همۀ مسائل تحت یکی از دو مقولۀ کامل و کارآ است و هر مسئله‌ای که عجیب به نظر آید به مسئله‌ای تبدیل می‌شود که بتوان با یکی از رشته‌های تجربی یا صوری با آن مواجه شد و به این ترتیب دیگر پرسش فلسفی نیست. در عصر جدید دانش‌هایی مانند اقتصاد و روانشناسی و معناشناسی و حتی منطق به تدریج با بهره‌مندی از دانش تجربی یا صوری امروز در مسیری مستقل خواهند افتاد که به علوم طبیعی نزدیک می‌شوند. اما این گونه نیست که هر علم تکامل‌یافته به براندازی پرسش‌های فلسفی کامیاب شده باشد. تعداد مسائلی که به روش تجربی یا صوری قابل حل باشند به نظر نمی‌رسد کاهش یافته باشند. گرچه فیلسوفان بزرگ روشنگری از هابز و هیوم تا بنتم و اگوست کنت این آرزو را در سر می‌پروراندند که آنچه دانش دربارۀ بشر بدان نیاز دارد کسی مانند نیوتن یا نیوتن‌های دیگر است تا سرگردانی‌های اهل متافیزیک را از بین ببرند و در عرصۀ پاک‌شده از آشفتگی‌های لفظی بنای علوم طبیعی را بر پا کنند ولی این برنامه محکوم به شکست بود و قلمرو فلسفه پاره‌پاره نشد. دلیل دوام آن پاسخ روشنگرانۀ کانت بود که میان مسائل مربوط به امور واقع و مسائل مربوط به الگوهایی که امور واقع در قالب آنها به ما عرضه می‌شوند فرق قاطع گذاشت. مقولاتی که ما به واسطۀ آنها دنیای بیرون را می‌یابیم چون دگرگونی‌ناپذیر و برای همۀ موجودات دارای حس و اگاهی یکسانند فقط یک جهان به همۀ ما عرضه می‌دارند. گرچه کسانی که دربارۀ تاریخ و اخلاق و زیبایی‌شناسی می‌اندیشند برخی تفاوت‌ها و دگرگونی‌ها را می‌بینند، ولی آنچه تفاوت می‌کند بیش از محتوای تجربی دیده‌ها و شنیده‌ها و اندیشه‌های تمدن‌ها، الگوها و مدلهایی بوده که هر تمدنی امور را در قالب آنها می‌دیده و درک می‌کرده است. این گونه است که دلایل اقدام به عمل و  قواعد اخلاقی و معتقدات سیاسی و مناسبات شخصی افراد تفاوت دارد. مثلاً در زمینۀ سیاست فیلسوفان حیات اجتماعی بشر را  در قیاس با مدل‌های گوناگون به تصور درآوردند. افلاطون الگوی سرشت انسانی و اهداف ان را هندسه قرار داد. ارسطو الگوی زیست‌شناسی را مطرح کرد. قیاس به خانواده مدلی است که بنا بود مناسبات انسانی را که مدل‌های مکانیکی از تبیین آنها ناتوان بودند روشن کند و مدل‌های دیگر. افراد و گروه‌ها و جوامع و فرهنگ‌ها تجربه‌های خود را در قالب این دست مدل‌ها به تصور درآورده‌اند. </p>
+                <p>انتشارات مینوی خرد بر زمینه و رده‌بندی این پرسش‌ها کتاب‌هایی در چندین حوزه، به هدف ترجمه، انتخاب کرده است.</p>
+                <p>انتشارات مینوی خرد در سال ۱۳۸۳ تأسیس شد ولی طرح فکری آن سال‌ها پیشتر از زمان مذکور ریخته شده بود. فکر اساسی این بوده و هست که  در حوزۀ پرسشهایی که بیان شد و  به نحوی که در هنر و دین و اخلاق و فلسفه و علم و اصول سیاسی متجلی است، آثاری ترجمه و تألیف شود. </p>
+                <p>در شفافیت ظاهری این کار، پستی و بلندی‌ها و چرخاب‌های پنهان و گره‌های بسیار بوده است که موجب تنگ شدن حوزۀ دید و محصور شدن نظر به مسائلی و فروماندن از برنامه‌ای که برای انتشارات تنظیم شده بود، گردیده و می‌گردد. کار غالباً دشوار آفریدن کتاب این است که به شیوه‌های شکل دادن و توصیف و تبیین    پرسش‌ها دست یابد. این توصیف و تبیین متضمن ارائۀ مدلی است که توصیف و تبیین در چارچوب آن صورت می‌گیرد. مدل‌هایی که بنا به شرایط برای برنامه نشر برگزیده شده‌اند گاه با یکدیگر تصادم کرده‌اند. بعضی نابسنده بوده‌اند زیرا در تشریح و تبیین بسیاری از جنبه‌های تجربۀ تاریخی کفایت نکرده‌اند و یا شکست خورده‌اند و جای به مدل‌های دیگری سپرده‌اند تا متناسب با شرایط تاریخی جدید بر آنچه مدل‌های پیشین نادیده گرفته‌اند تأکید کنند.</p>
+                <p>انتخاب و آفریدن اثر می‌بایست بدین منظور صورت گیرد که مدل‌های پنهانی فراخور وضع را بیرون بکشد و روشن کند که چگونه افراد جامعه در قالب آنها می‌اندیشند و آنچه در مدل‌ها پوشیده یا متناقض است آشکار سازد و تعارضات را تشخیص دهد. </p>
+                <p>در این چند سالی که مینوی خرد تأسیس شده است در دوره های مختلف از یاری و همکاری دوستانی بهره گرفته است که نام بردن از همۀ آنها نیازمند گردآوردن دفتری است.  مهدی نصراله‌زاده، مجید اخگر، منصور براهیمی، علی صلحجو از بدو تأسیس طی چند سال در انتخاب و تولید کتابهای مربوط به حوزۀ نظریۀ هنر، هنرهای تحسمی و هنرهای دراماتیک همکاری کردند‌‌؛ اواخر سال ۱۳۹۱ انتشارات مینوی خرد مرهون کسب دانش از مرحوم دکتر جواد طباطبائی و دکتر عزت الله فولادوند درحوزۀ اندیشۀ سیاسی و حقوق و فلسفه گردید و رهنمودهای ایشان برای ایجاد برنامه‌ای مشخص‌تر و دقیق‌تر تا سال ۱۴۰۰ تداوم یافت؛ مسعود قاسمیان و بابک محقق به نحو مستقیم یا غیر مستقیم در انتخاب برخی آثار و یافتن مترجم‌هایی تأثیرگذار بودند؛ خشایار دیهیمی، دکتر مصطفی ملکیان، دکتر بهمن پازوکی، دکتر علی معظمی، دکتر حسین شیخ‌رضایی و دکتر امیراحسان کرباسی‌زاده در انتخاب کتاب برای مجموعه‌هایی یاری کردند که برخی به سرانجام نرسید؛ هومن پناهنده سال‌ها ویراستار انتشارات بوده است؛ شادروان کامران فانی، عبدالحسین آذرنگ، رضا رضایی، مسعود قاسمیان و شادروان محمدرضا باطنی گاه در زمینۀ ویرایش انتشارات را از مشورت خود برخوردار کردند؛ راستین فروتن در زمینۀ چاپ و مهران زمانی در زمینۀ طراحی جلد با انتشارات همکاری کردند. کار انتشارات با مجموعۀ شناخت امریکا و بسط و گسترش ترجمۀ آثاری در اندیشۀ حقوقی تداوم یافته است. </p>
+                <p>
+                    مدیر و مؤسس انتشارات<br>
+                    پروانه شعبانی صمغ‌آبادی
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== فهرست آثار ===== -->
+    <section class="catalog-section" id="catalog">
+        <div class="section-inner">
+            <h2 class="section-title">فهرست آثار</h2>
+
+            <div class="catalog-group" id="tabatabaeiGroup">
+                <h3 class="catalog-group-title">آثار دکتر جواد طباطبایی (1390-1403)</h3>
+                <div class="books-grid" id="tabatabaeiGrid"></div>
+                <div class="pagination" id="tabatabaeiPagination"></div>
+            </div>
+
+            <div class="catalog-group" id="otherWorksGroup">
+                <h3 class="catalog-group-title">دیگر آثار انتشارات</h3>
+                <div class="books-grid" id="otherWorksGrid"></div>
+                <div class="pagination" id="otherWorksPagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">انتشارات مینوی خرد</span>
+                <p>
+                    تمام حقوق نشر و بازنشر آثار منتشرشده متعلق به انتشارات مینوی خرد است.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>پیوندها</h4>
+                <ul>
+                    <li>
+                        <a href="https://t.me/minooyekherad" aria-label="تلگرام">
+                            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="currentColor" d="M21.8 4.6 18.5 20c-.25 1.1-.9 1.37-1.82.85l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.03.5l.37-5.12 9.32-8.42c.4-.36-.09-.56-.62-.2L5.72 13.6.76 12.05c-1.08-.34-1.1-1.08.23-1.58L20.35 3.1c.9-.34 1.69.2 1.45 1.5Z"/>
+                            </svg>
+                            <span>تلگرام</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/minooyekheradpub?stkn=MWw2cXR4OW80a2pvcw%3D%3D&utm_source=qr" aria-label="اینستاگرام">
+                            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                                <circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/>
+                            </svg>
+                            <span>اینستاگرام</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>راه‌های ارتباطی</h4>
+                <ul>
+                    <li>آدرس: خیابان دولت، دیباجی جنوبی، کاووس شرقی، ضرابی، پلاک ۱، واحد ۷</li>
+                </ul>
+                <ul>
+                    <li>تلفن: ۲۲۵۶۶۴۲۹</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© ۱۳۸۲–۱۴۰۵ انتشارات مینوی خرد</span>
+            <span>Minooyekherad</span>
+        </div>
+    </footer>
+
+    <script>
+        // ===== داده‌های اصلی سایت؛ از نسخه ارسالی حفظ شده‌اند =====
+        const books = [
+            { title: 'مقدمه‌ای بر روایت در ادبیات و سینما', year: 1386, image: 'مقدمه ای بر روایت در ادبیات و سینما.jpg' },
+            { title: 'نظریۀ هنر آوانگارد', year: 1386, image: 'نظریۀ هنر آوانگارد.jpg' },
+            { title: 'داستایفسکی پس از باختین', year: 1387, image: 'داستایفسکی پس از باختین.jpg' },
+            { title: 'نمایان با ماسک', year: 1387, image: 'نمایان با ماسک.jpg' },
+            { title: 'نظریه و تحلیل درام', year: 1387, image: 'نظریه و تحلیل درام.jpg' },
+            { title: 'آیا مدرنیسم شکست خورده است؟', year: 1387, image: 'آیا مدرنیسم شکست خورده است؟.jpg' },
+            { title: 'بوطیقای ساختگرا', year: 1388, image: 'بوطیقای ساختگرا.jpg' },
+            { title: 'پژوهشی درباره فن شعر ارسطو', year: 1388, image: 'پژوهشی درباره فن شعر ارسطو.jpg' },
+            { title: 'گزیده مقالات روایت', year: 1388, image: 'گزیده مقالات روایت.jpg' },
+            { title: 'بودلر بنیامین', year: 1390, image: 'بودلر بنیامین.jpg' },
+            { title: 'عکاسی', year: 1390, image: 'عکاسی.jpg' },
+            { title: 'درآمدی به علم هرمنوتیک فلسفی', year: 1391, image: 'درآمدی بر علم هرمنوتیک فلسفی.jpg' },
+            { title: 'روایت‌ها و راوی‌ها', year: 1391, image: 'روایت‌ها و راوی‌ها.jpg' },
+            { title: 'سفر کارگردان', year: 1391, image: 'سفر کارگردان.jpg' },
+            { title: 'جنبش پدیدارشناسی', year: 1391, image: 'جنبش پدیدارشناسی.jpg' },
+            { title: 'سایه‌های نوآر', year: 1391, image: 'سایه‌های نوآر.jpg' },
+            { title: 'روایت‌شناسی: شکل و کارکرد روایت', year: 1391, image: 'روایت شناسی.jpg' },
+            { title: 'علم جامعه اخلاق', year: 1391, image: 'علم جامعه اخلاق.jpg' },
+            { title: 'پرسش‌هایی از مارکس', year: 1391, image: 'پرسش‌هایی از مارکس.jpg' },
+            { title: 'ایده - تئاتر', year: 1391, image: 'ایده - تئاتر.jpg' },
+            { title: 'راهنمای تفکر نقادانه پرسیدن سوال‌های به‌جا', year: 1391, image: 'راهنمای تفکر نقادانه.jpg' },
+            { title: 'سینما ۱', year: 1391, image: 'سینما ۱.jpg' },
+            { title: 'بعداز نقد‌نو', year: 1392, image: 'بعد از نقد نو.jpg' },
+            { title: 'مسائل اساسی پدیدارشناسی', year: 1392, image: 'مسائل اساسی پدیدارشناسی.jpg' },
+            { title: 'آیا دموکراسی در آمریکا ممکن است؟', year: 1392, image: 'آیا دموکراسی در آمریکا ممکن است؟.jpg' },
+            { title: 'کاوش در مبانی اخلاق', year: 1392, image: 'کاوش در مبانی اخلاق.jpg' },
+            { title: 'تاریخچۀ خوشبختی', year: 1392, image: 'تاریخچۀ خوشبختی.jpg' },
+            { title: 'سفر نویسنده', year: 1392, image: 'سفر نویسنده.jpg' },
+            { title: 'تأملی درباره ایران مشروطه‌خواهی', year: 1392, image: 'تأملی درباره ایران مشروطه‌خواهی.jpg' },
+            { title: 'تأملی در ترجمه متن‌های اندیشه سیاسیی جدید مورد شهریار ماکیاوللی', year: 1392,
+            image: 'تأملی در ترجمه متن‌های اندیشه سیاسی جدید مورد شهریار ماکیاوللی.jpg' },
+            { title: 'فلسفه ایرانی و فلسفه تطبیقی', year: 1392, image: 'فلسفه ایرانی و فلسفه تطبیقی.jpg' },
+            { title: 'سقوط اصفهان به روایت کروسینسکی', year: 1392, image: 'سقوط اصفهان به روایت کروسینسکی.jpg' },
+            { title: 'نشانه شناسی شناختی در حیطۀ فیلم', year: 1392, image: 'نشانه شناسی شناختی در حیطۀ فیلم.jpg' },
+            { title: 'تصویر و ذهن', year: 1393, image: 'تصویر و ذهن.jpg' },
+            { title: 'ژانرهای سینمایی', year: 1393, image: 'ژانرهای سینمایی.jpg' },
+            { title: 'زیبایی', year: 1393, image: 'زیبایی.jpg' },
+            { title: 'جدال قدیم و جدید در الهیات و سیاسات', year: 1393, image: 'جدال قدیم و جدید در الهیات و سیاسات.jpg' },
+            { title: 'نظام‌های نوآئین در اندیشه سیاسی', year: 1393, image: 'نظام‌های نوآئین در اندیشه سیاسی.jpg' },
+            { title: 'ضرورت تئاتر', year: 1394, image: 'ضرورت تئاتر.jpg' },
+            { title: 'درآمدی بر روش‌شناسی هنر', year: 1394, image: 'روش‌شناسی هنر.jpg' },
+            { title: 'تاریخ اجتماعی سینمای ایران', year: 1394, image: 'تاریخ اجتماعی سینمای ایران.jpg' },
+            { title: 'چرا روشنفکران لیبرالیسم را دوست ندارند؟', year: 1394, image: 'چرا روشنفکران لیبرالیسم را دوست ندارند؟.jpg' },
+            { title: 'گذشتۀ تحریف شده: تفسیر دوبارۀ اروپا', year: 1394, image: 'گذشتۀ تحریف شده.jpg' },
+            { title: 'تاریخ اندیشه سیاسی در ایران- ملاحظاتی در مبانی نظری', year: 1394,
+            image: 'تاریخ اندیشه سیاسی در ایران- ملاحظاتی در مبانی نظری.jpg' },
+            { title: 'تولد اروپا', year: 1395, image: 'تولد اروپا.jpg' },
+            { title: 'سیاه‌تر از شب', year: 1395, image: 'سیاه تر از شب.jpg' },
+            { title: 'مفاهیم بنیادی تاریخ هنر', year: 1395, image: 'مفاهیم بنیادی تاریخ هنر.jpg' },
+            { title: 'تأملی درباره ایران مکتب تبریز', year: 1395, image: 'تأملی درباره ایران مکتب تبریز.jpg' },
+            { title: 'تاریخ فلسفه اسلامی', year: 1395, image: 'تاریخ فلسفه اسلامی.jpg' },
+            { title: 'تأملی درباره ایران جلد نخست- دیباچه‌ای بر نظریه انحطاط ایران', year: 1395,
+            image: 'تأملی درباره ایران جلد نخست- دیباچه‌ای بر نظریه انحطاط ایران.jpg' },
+            { title: 'تاریخ زیبایی شناسی جلد دوم: زیبایی‌شناسی قرون وسطی', year: 1396,
+            image: 'تاریخ زیبایی شناسی جلد دوم زیبایی‌شناسی قرون وسطی.jpg' },
+            { title: 'خواجه نظام الملک طوسی گفتار در تداوم فرهنگی ایران', year: 1396,
+            image: 'خواجه نظام الملک طوسی گفتار در تداوم فرهنگی ایران.jpg' },
+            { title: 'روشنفکری: آگاهی کاذب و ایده‌ئولوژی', year: 1396, image: 'روشنفکری آگاهی کاذب و ایده‌ئولوژی.jpg' },
+            { title: 'در جست‌و‌جوی خرد و آزادی ارجنامه دکتر عزت‌الله فولادوند', year: 1396,
+            image: 'در جست و جوی خرد و آزادی.jpg' },
+            { title: 'زوال اندیشه سیاسی در ایران', year: 1396, image: 'زوال اندیشه سیاسی در ایران.jpg' },
+            { title: 'متفکران چپ نو', year: 1397, image: 'متفکران چپ نو.jpg' },
+            { title: 'گفتارهایی در معرفت‌شناسی علم اقتصاد', year: 1397, image: 'گفتارهایی در معرفت‌شناسی علم اقتصاد.jpg' },
+            { title: 'گفتارهایی در روش‌شناسی علم اقتصاد', year: 1397, image: 'گفتارهایی در روش‌شناسی علم اقتصاد.jpg' },
+            { title: 'سرانجام انسان طراز نوین', year: 1397, image: 'سرانجام انسان طراز نوین.jpg' },
+            { title: 'ملت دولت و حکومت قانون: جستار در بیان نص و سنت', year: 1398,
+            image: 'ملت دولت و حکومت قانون جستار در بیان نص و سنت.jpg' },
+            { title: 'ملاحظات درباره دانشگاه', year: 1398, image: 'ملاحظات درباره دانشگاه.jpg' },
+            { title: 'جامعه مدنی', year: 1399, image: 'جامعه مدنی.jpg' },
+            { title: 'مقالات فدرالیست', year: 1400, image: 'مقالات فدرالیست.jpg' },
+            { title: 'ابن‌خلدون و علوم اجتماعی: گفتار در شرایط امتناع', year: 1400,
+            image: 'ابن‌خلدون و علوم اجتماعی گفتار در شرایط امتناع.jpg' },
+            { title: 'آموختن فلسفه ورزی', year: 1401, image: 'آموختن فلسفه ورزی.jpg' },
+            { title: 'پانوفسکی و بنیادهای تاریخ هنر', year: 1403, image: 'پانوفسکی و بنیادهای تاریخ هنر.jpg' },
+            { title: 'قرآن تامس جفرسون', year: 1403, image: 'قرآن تامس جفرسون.jpg' },
+            { title: 'مغالطات و سنجش استدلال', year: 1403, image: 'مغالطات و سنجش استدلال.jpg' },
+            { title: 'روشنفکران فرانسوی ۱۹۵۶-۱۹۴۴', year: 1403, image: 'روشنفکران فرانسوی.jpg' },
+            { title: 'تابستان انقلابی', year: 1403, image: 'تابستان انقلابی.jpg' },
+            { title: 'مشروطیت قدیم و جدید', year: 1404, image: 'مشروطیت قدیم و جدید.jpg' },
+        ];
+
+        // ===== آثار دکتر جواد طباطبایی =====
+        const tabatabaeiTitles = new Set([
+            "ابن‌خلدون و علوم اجتماعی: گفتار در شرایط امتناع",
+            "تاریخ اندیشه سیاسی در ایران- ملاحظاتی در مبانی نظری",
+            "تاریخ فلسفه اسلامی",
+            "تأملی در ترجمه متن‌های اندیشه سیاسیی جدید مورد شهریار ماکیاوللی",
+            "تأملی درباره ایران جلد نخست- دیباچه‌ای بر نظریه انحطاط ایران",
+            "تأملی درباره ایران مشروطه‌خواهی",
+            "تأملی درباره ایران مکتب تبریز",
+            "جدال قدیم و جدید در الهیات و سیاسات",
+            "خواجه نظام الملک طوسی گفتار در تداوم فرهنگی ایران",
+            "زوال اندیشه سیاسی در ایران",
+            "سقوط اصفهان به روایت کروسینسکی",
+            "فلسفه ایرانی و فلسفه تطبیقی",
+            "ملاحظات درباره دانشگاه",
+            "ملت دولت و حکومت قانون: جستار در بیان نص و سنت",
+            "نظام‌های نوآئین در اندیشه سیاسی"
+        ]);
+
+        // ===== توضیحات دقیق ارسالی برای هدر =====
+        const heroEntries = [{"title": "مشروطیت قدیم و جدید", "description": "کتاب مشروطیت: قدیم و جدید\nاثر چارلز هاورد مک‌ایل‌وین اساس خود را از مجموعه‌گفتارهای مسنجر در\nدانشگاه کرنل طی سالهای 1939-1938 گرفته است. بر حسب زمان این گفتار که مقارن با تحولات\nجهان در آستانۀ جنگ جهانی دوم است، شاید بتوان گفت که مک‌ایل‌وین با فراست و درکی\nعمیق از روند دگرگونی‌های تاریخی روزگارش ـ از به مخاطره افتادن هستی نوع بشر در\nپرتو پیشرفت‌های فنی و توجیه به‌کارگیری\nوسایل نابودی پیشرفته در جنگ جهانی اول و جنگ پیش رو؛ از ظهور مجدد جنگ تام که بذر\nآن در جنگ جهانی اول کاشته شد و هدف قرار گرفتن منتقمانۀ جمعیت غیر نظامی به‌نحوی متزاید؛\nاز تجربۀ شکست کشورها در جنگ جهانی اول و هراس از سرنوشت شومی که در انتظار حکومت‌هایی\nاست که با شکست نظامی مواجه می‌شوند و اقتدار و مرجعیت مصادر قدرت را ازدست‌رفته، ملت‌ها\nرا بی‌محافظ در برابر بلایای مداوم می‌یابند؛ از تغییرات سلطه‌جویانه‌ای که قدرت‌های\nفاتح به کشور شکست‌خورده، از جمله در تعیین شکل نظام سیاسی، تحمیل می‌کنند و از\nاینکه اگر بنا باشد به مسئلۀ انتخاب حکومت در میدان جنگ پاسخ داده شود به جای قدرت\nمردم خشونت تعیین کننده خواهد بود؛ از زیر و زبر شدن روابط بین‌المللی و مناسبات\nدولت‌ها، و از اسباب و علل دیگری که می‌توان از تدقیق استاد مک‌ایل‌وین در تحلیل\nاصل هادی مشروطیت و حصول منفعت‌های نشأت‌گرفته از آن برای ملت‌ها و دولت‌های جهان\nیافت ـ در انتظار چه سیر تحولی عجیبی است و این تحول در آینده تا چه اندازه به\nسوءتفاهم هولناکی کمک خواهد کرد که در مزیت انگاشته شدن قدرت مطلقه و مستقل از هر\nقسم مرجعی نهفته است و مزیت انگاشته شدن آن از ضعف پایه‌های مرجعیت و اقتدار سیاسی\nنشأت میگیرد که چون دیگر قادر به مراقبت از حقوق ملت خویش نباشد، راه را برای ظهور\nقدرت مطلقۀ جدید هموار میکند.", "image": null}, {"title": "مجموعۀ شناخت ایالات متحده آمریکا", "description": "تاریخ کشور آمریکا به عنوان\nموجودی مستقل با انقلاب و تأسیس  جمهوری\nآغاز می‌شود. مردان انقلاب آمریکا اصرار داشتند که کاری که بدان همت گماشته‌اند\nباید نوآوری مطلق باشد. انقلاب آمریکا ناگهان در نگرفت بلکه به دست مردانی به وجود\nآمد که به رأی یکدیگر احترام می‌گذاشتند و با هم پیمان بسته بودند. بنیاد کار با\nقدرت به هم پیوسته جمع نهاده شد نه به نیروی فردی یک معمار. اصلی که در سال‌های\nسرنوشت‌ساز بنیاگذاری آشکار شد اصل عهد و پیمان و مشاوره بود و خود واقعۀ انقلاب،\nبه قول یکی از بنیادگذاران، نشان داد که انسانها واقعاً می‌توانند بر اساس تأمل و\nگزینش، حکومت خوب تأسیس کنند و تا ابد تقدیرشان این نیست که برای به پا کردن اساس\nسیاسی جامعه به تصادف و زور وابسته باشند.", "image": "مجموعۀ شناخت ایالات متحده آمریکا.jpg"}, {"title": "روشنفکران فرانسوی ۱۹۵۶-۱۹۴۴", "description": "جنگ جهانی اول زخمی بر پیکر\nفرانسه زد که به سبب تلفات جبران ناپذیر بسیار مصیبت بار از کار درآمد. در پنجاه\nسال پس از آغاز جنگ جهانی اول جستجوهای \nناشی از درماندگی روزافزون برای گشودن روزانه‌‌ای به بیرون بر افکار فرانسویان\nاز هر صنف و دسته‌ای سیطره داشت. آگاهی از آثار جنگ با همۀ  تأخیر، در ارزیابی موقعیت فرهنگی و نیز در عرصۀ\nبین‌المللی توأم با غلو بود: احساس صدرنشینی فرهنگی در ملت و ادعای برتری در فلسفه\nو هنر که مؤید خوش‌‌خیالی‌های نظامی و دیپلماتیک 1919 تا 1924 بود و اعتقاد راسخ\nبه اینکه فرانسویان بار دیگر در مقام رهبری اروپا قرار گرفته‌اند. از اواسط دهه به\nبعد، بتدریج که فرانسویان تعهدات خارجی را کنار گذاشتند، این احساس صدرنشینی از\nلحاظ روانی می‌بایست جای خالی نقش فعال در صحنۀ بین‌‌المللی را پرکند. آنچه اعتماد\nفرانسویان را به استواری میراثشان سست کرد، ظهور هیتلر و بحران بزرگ اقتصادی بود.\nپس از جنگ جهانی دوم مانند دوران پس از جنگ اول، آشکار شدن آثار اجتماعی و اخلاقی\nجنگ مدتی به تأخیر افتاد. نگرش و موضع گیری‌ها و اندیشه روشنفکران از دهه‌ای که با دهۀ ۱۹۳۰ آغاز و در دهۀ 1960 به پایان\nمی‌‌رسد ویژگی موضوع بحث کتاب فوق است.", "image": null}, {"title": "متفکران چپ نو", "description": "موضعِ جناح چپ، از همان‌زمان که تفکیکِ میان\nچپ و راست پدید آمد، به روشنی تعریف شده بود. چپ‌ها، در کنارِ ژاکوپن‌های انقلابِ فرانسه،\nبر این باور بودند که مواهب و نعماتِ این جهان توزیع ناعادلانه‌ای دارند، و این‌که ایراد نه در طبیعت انسان بلکه در غصبِ این نعمات\nاز سوی طبقه‌ای غالب، است. ایشان موضعِ\nخود را در مخالفت با قدرتِ حاکمه تعریف کردند، قهرمانان نظمی نوین که ظلم‌های رفته بر ستم‌دیدگان را اصلاح خواهند کرد. دو\nویژگی این نظم نوین پیگیری آن را توجیه می‌کنند: رهایی‌بخشی و عدالت اجتماعی. این\nویژگی‌ها کم‌و‌بیش با حّریت و برابری‌ای که در انقلابِ\nفرانسه از آن دفاع می‌شد مطابقت دارند، اما صرفاً کم‌وبیش. رهایی‌بخشی‌ای که جنبش‌های چپِ امروز مدافع آن هستند صرفا به معنای آزاد\nشدن از زیر یوغ ستم و سرکوب سیاسی یا حق کاروکسبِ بی مزاحمت نیست. بلکه به معنای\nخلاصی از \"ساختارها\" است: از نهادها، عرف‌ها و قراردادهایی که نظم\n\"بورژوایی\" را ساخته‌اند، و هرآنچه در قلبِ جامعۀ غرب نظامی مشترک از\nهنجارها و ارزش‌ها پدید آورده است. حتی آن\nدسته از چپ‌ها که از لیبرتارینیسم دهۀ 1960 اجتناب می‌کردند، حّریت را نوعی خلاص\nشدن از قید و بندهای اجتماعی می‌دانستند.  بیش‌تر آثار و نوشته‌های آن‌ها در پی تخریب و\nساختارشکنی نهادهایی همچون خانواده، مدرسه، حقوق و دولت‌ملّتی بودند که تمدّن غرب\nاز طریقِ آن‌ها به ما به ارث رسیده است.\nاین ادبیات، که پربارترین جلوۀ آن را می‌توان در میانِ نوشته‌های فوکو یافت، آنچه\nرا دیگران جز ابزارهای نظمِ مدنی نمی دانند، \"ساختارهای سلطه\" معرّفی می‌کند.\nدر این کتاب به ایده هایی از چند شخصیت مهم در میان متفکران چپ نو از منظری\nنقادانه پرداخته می شود.", "image": null}, {"title": "راهنمای تفکر نقادانه پرسیدن سوال‌های به‌جا", "description": "اصطلاح تفکر نقادانه به مجموعه‌ای از نگرش‌ها و\nمهارت‌های فکری اطلاق می‌گردد که برای ارزیابی و محک‌زدن ادعاها و استدلال‌ها\nبه‌کار می‌آیند. تفکر نقادانه را به‌شیوه‌های گوناگونی می‌توان به‌کار برد. شیوه‌ای\nکه نویسندگان این کتاب پیش گرفته‌اند پرسیدن تعدادی سؤال نقادانه است.\nپرسیدن این سؤال‌ها که هر کدام روی جنبۀ\nخاصی از ادعا یا استدلال مطرح‌شده\nانگشت می‌گذارد، مبنای موردنیاز را برای ارزیابی نقادانه و عقلانی آن ادعا یا\nاستدلال در اختیار قرار می‌دهد. به عقیدۀ\nنویسندگان کتاب حاضر، مزیت روش یادشده در این است که با استفاده از آن می‌توان با\nنظم‌وترتیب در طی مراحل معینی به ارزیابی ادعاها و استدلال‌ها پرداخت. ترتیب\nپرسیدن سؤال‌های نقادانه طوری است که به کسی که می‌خواهد نقادانه بیندیشد کمک می‌کند\nتا کار خود را از تشخیص ادعاها و استدلال‌ها آغاز کند و در ادامه موارد مهم دیگری\nمانند دلایل، واژه‌ها و عبارت‌های مبهم، شواهدوقرائن، فرض‌ها، آمار، مغالطه‌ها،\nعلت‌های بدیل، و... را که هر یک نقش تعیین‌کننده‌ای در قوت یا ضعف ادعاها و\nاستدلال‌ها دارند، تشخیص دهد و آن‌ها را نقادانه ارزیابی کند.", "image": null}, {"title": "آموختن فلسفه ورزی", "description": "فلسفه‌ورزی به\nمفهوم عام کلمه ــ که می‌توان آن را معادل سیر آزاد تفکر، با\nابزار عقل خودبنیاد، و با هدف رسیدن یا نزدیک شدن به حقیقت به‌شمار آورد ــ نیاز ضروری هر انسانی است که کشف حقیقت\nدغدغۀ اوست. این سیر آزاد اندیشه‌ورزی از همان‌جا آغاز می‌شود که آدمی برای لحظاتی چند\nگریبان باورهای خود را می‌گیرد و از دلیل ورود آن‌‌ها به سرای ذهن می‌پرسد. پرسش‌گری\nدر وهلۀ نخست ارادۀ معطوف به کشف حقیقت، و پس از آن\nشجاعت دانستن را می‌طلبد. اما اگر این دو همراه با\nآموختن آداب و اصول فلسفه‌ورزی نباشند، آدمی راه به\nجایی نمی‌برد.\n\nکتاب حاضر پاره‌ای از مهم ترین مقدمات و\nاصول و قواعد فلسفه‌ورزی را به زبانی آسان شرح می‌دهد، و\nبرای کسانی که می‌خواهند قدم در این راه دشوار و\nپرپیچ و خم، اما رهایی‌بخش، بگذارند، می‌تواند راهنمایی سودمند باشد.", "image": null}, {"title": "در جست‌و‌جوی خرد و آزادی ارجنامه دکتر عزت‌الله فولادوند", "description": "تدوین ارجنامه برای صاحب‌معرفت صاحب‌نامی که تأثیری ژرف و گسترده در زبان و اندیشۀ معاصر داشته، مسئولیتی دشوار است و از آن دشوارتر نوشتن\nسرآغازی برآن. در این سرآغاز، از آغازندگی او باید گفت در مسیری که خود روشنش کرد\nآن هم در روزگاری که جامعه‌مان\nمرحله‌ای از زندگی را می‌گذارند که هنوز گام‌های عینی و قطعی در جهت بالیدن و\nشکوفایی برنداشته بود و حتی به پذیراشدن\nامکان‌های جدید گشوده نبود. او جست‌وجو\nرا آغاز کرد و درهای مهم‌ترین ساخت‌های فکری را با این سرآغاز گشود. مجموعه‌ای از\nآثار را با ترجمه خلق کرد که اصطلاح ساختار را می‌توان بر مجموعه نهاد؛ هم‌چنان‌که\nاین اصطلاحِ گرفته شدهِ از معماری، معنای استعاری کنش متقابل آثار بر یکدیگر را در\nخود دارد، چنین پیوستگی‌ای میان بخش‌های این مجموعه‌آثار می‌توان یافت. بستگی و\nنسبت هر اثر با اثرهای دیگر مانند موجود اندامور،\nمجموعه‌ای پدید می‌آورد که تبیین آن بر\nمفاهیمی مانند هماهنگی ایده‌ها و روابط متقابل ایده‌ها و درونمایه‌ها و در نتیجه\nمبتنی بر ساختار است. ژرفا و گسترۀ چنین روابط\nمتقابلی در انتخاب آثار و زبان ترجمۀ استاد فولادوند در حوزه‌های فلسفه، اندیشۀ\nسیاسی، علوم اجتماعی، نقد ادبی و ادبیات داستانی کاویدنی و پژوهیدنی است.", "image": null}, {"title": "علم جامعه اخلاق", "description": "ماخاروف فیزیکدان روسی زمانی\nگفته بود در یک جنگ اتمی از این پس دیگر نمی‌توان مطابق فرمول کلاوزویتس جنگ را ادامۀ\nسیاست با وسایل دیگر خواند. چنین جنگی وسیله‌ای خواهد بود برای خودکشی عمومی. تا\nزمانی که برای جنگ، این داور نهایی بین المللی، در صحنۀ سیاسی جانشینی پیدا نشده\nاست، شطرنج سرنوشت میان ابرقدرت‌‌ها بر حسب این قاعده بازی می‌شود که هر کدام\nببرد، کار هر دو تمام است. این مسابقۀ تسلیحاتی همبسته با انقلاب تکنولوژیک به حدی\nاز پیش بینی ناپذیری رسیده است که علم و تکنولوژی به عناصری سرنوشت‌ساز برای نوع\nبشر تبدیل گشته‌اند.", "image": null}, {"title": "تاریخ اجتماعی سینمای ایران", "description": "خیال و خیال‌پردازی و نمایش هم در فرهنگ و هنرهای ایران\nسابقه‌ای طولانی دارد و هم در آثار فلاسفه و شعرای خیال‌پرداز ایرانی، هم‌چون عمر خیام ریاضی‌دان و منجّم و شاعر\nپرآوازۀ سده‌های پنجم و ششم. خیام در یکی از رباعیات خود \"فانوس\nخیال\"، سَلَف زئوتروپ، را تمثیلی از حضور ناپایدارِ زودگذر انسان بر زمینی می‌گیرد که به گرد خورشید می‌چرخد. سینما نیز سابقه‌ای طولانی در ایران\nدارد. سابقه‌ای که بیشتر سیاسی است تا فلسفی. این رسانه، هم استعارۀ\nمدرنیته بود و هم تجسم آن. سینما از همان سال 1279ش که وارد ایران شد، در خدمت ملی‌گرایی، مدرنیتۀ فرهنگی، و غربی شدن بود (در این‌جا مدرنیته و غربی شدن را مشابه گرفته‌ایم نه هم‌معنا، به این دلیل که بتوان به وجود مدرنیته‌های غیرغربی\nنیز قائل شد). غربی شدن ایرانیان در سدۀ سیزدهم شدت گرفت و به\nبخشی از ناخودآگاه سیاسی آنان تبدیل شد، آن هم با چیزی که میشل فوکو آن را\n\"شبکۀ روابطی\" توصیف کرده که در تنش مداوم، مدرنیته را می‌پروراند و ترویج می‌دهد. پژوهش حاضر، سینمای ایران را\nدر زمینۀ آن دسته از شبکه‌های قدرت و روابط دانشِ\nخاص و موردی قرار می‌دهد که درآمیختگی پویای آن‌ها در سطوح جزئی و خُرد، به این سینما ویژگی‌های متمایزی بخشیده\nاست. بنابراین کتاب حاضر فقط بررسی متنیِ سینمای ایران و تجزیه و تحلیل موبه‌موی\nبرخی از متون فیلمی، یا پژوهش مؤلف‌گرایانه دربارۀ بزرگان این سینما،\nیا نگاه تاریخی به روال و روند آن نیست. بلکه کتاب حاضر به متون فیلم، مؤلفان\nفیلم، و به تاریخ و نظریۀ فیلم می‌پردازد ولی در زمینۀ روابط خُرد میان سینمای ملّی و مدرنیته.", "image": null}, {"title": "سیاه‌تر از شب", "description": "این پرسش که \"فیلم نوآر چیست؟\" \\_\\_ سبک است؟ ژانر است؟ دوره‌ای در تاریخ سینما و فیلمسازی است؟ ویژگی‌هایش چیست؟ چگونه تعریف می‌شود؟، و پرسش‌های از این دست ــ پرسشی‌ست که از همان اولین\nمقالاتی که در اواسط دهۀ 1940 به اصطلاح \"نوآر\" اشاره شد، و در\nنخستین کتابی که در میانۀ دهۀ 1950 دربارۀ موضوع نوآر نگاشته شد، \"کتابی که\nآن را معیار تمام آثار بعدی ناظر به این موضوع دانسته‌اند\"، پاسخ‌های گوناگون و متفاوتی دریافت کرده است. جیمز\nنرمور، نویسنده، منتقد، و استاد بازنشستۀ دانشگاه ایندیانا، به\nیمن دانش و احاطۀ مثال‌زدنی خود از تاریخ سینما\nو بر تاریخ سینما، و نیز تاریخ سیاسی و اجتماعی و ادبی و هنری\nآمریکا، با قرار دادن این اصطلاح در \"زمینه\"‌ها و \"زمانه\"های گوناگون، آن را \"مسئله‌دار\" و به نوعی \"پدیدارشناسی\" می‌کند، و با این کار توفیق می‌یابد که موفق‌ترین کتاب\nخویش را به منبعی مهم برای مطالعۀ این ژانر و مطالات بعدی در\nاین زمینه تبدیل کند.", "image": null}, {"title": "ژانرهای سینمایی", "description": "چه چیز مدام ما را به همان پرسش‌های قبلی پیرامون سینما\nبرمی‌گرداند، پرسش‌هایی دربارۀ مؤلف‌بودن، تولید ملی، خصوصیات رسانه‌ها، لذت‌ها و نارضایتی‌ها و در این‌جا ژانر؟ چرا هنوز سؤالات خاصی مطرح هستند که پژوهشگران را به تفکر و گفت‌و‌گو وامی‌دارند؟ کتاب رافائل مواَن که\nاَلیستر فاکس و هیلاری رَدنر به انگلیسی ترجمه کرده‌اند اثری تحسین‌برانگیز و اصیل است که به\nمجموعه‌ای درخشان از پژوهش‌های اخیر در مورد این موضوع می‌پیوندد، آثاری که که\nمؤلفان نامداری از جمله ریک آلتمن و استیو نیل جزو پدیدآورندگانشان هستند. *ژانرهای\nسینمایی* که ترکیبی از پژوهش‌های اروپایی-امریکایی\nهستند مروری فشرده و دقیق بر پرسش‌هایی که کارکنان صنعت سینما، مخاطبان و پژوهشگران احساس می‌کنند که باید آن‌ها را\nدر کنار هم قرار دهند. علاوه‌براین، مواَن مجموعه‌ای از نمونه‌ها را برای توضیح دیدگاه‌های مختلف می‌آورد. نمونه‌های مذکور، سیطرۀ متعارف در پژوهش‌های انگلیسی زبان را که\nمبتنی بر مثال‌هایی که از سینمای هالیوود هستند زیرپا می‌گذارند. پرداختن به این\nموضوع از دیدگاه یک پژوهشگر فرانسوی منجر به ارائۀ نمونه‌های فراوانی از سینمای اروپا شده است که به درک فراملی از الگوهای فیلم‌سازی\nجان تازه‌ای می‌بخشند.", "image": null}, {"title": "سینما ۱", "description": "کتاب حاضر نوعی نظام رده‌بندی است؛ کوششی برای طبقه‌بندی تصاویر و نشانه‌ها. جلد نخست به تعیین\nعناصر می‌پردازد و صرفاً عناصر یک بخش از طبقه‌بندی را بررسی می‌کند. در این متن\nبارها به پرس، منطق‌دان امریکایی (۱۹۱۴-۱۸۳۹)، اشاره شده است،\nچراکه او طبقه‌بندی عامی از تصاویر و نشانه‌ها بنا گذاشت که\nبی‌شک متنوع‌ترین و پیچیده‌ترین طبقه‌بندی‌هاست. طبقه‌بندی او را می‌توان با طبقه‌بندی\nلینو در تاریخ طبیعی مقایسه کرد، یا حتی بیش‌تر با جدول مندلیف شیمی.\n\nمقایسه‌ای دیگر هم ضروری به نظر می‌رسد. برگسون *ماده\nو خاطره* را در ۱۸۹۶ نوشت؛ کتابی که تشخیص نوعی بحران در روان‌شناسی بود. حرکت، به‌عنوان واقعیتی فیزیکی در جهان خارجی، و تصویر، به‌عنوان واقعیتی روانی در آگاهی، دیگر در تقابل با هم نبودند. کشف برگسونیِ حرکت-تصویر، و به‌نحوی عمیق‌تر زمان-تصویر، حتی امروزه چنان پربار است\nکه معلوم نیست ما تاکنون به جمیع نتایج آن دست یافته باشیم. در جلد نخست، ما به\nحرکت-تصویر و گونه‌های آن می‌پردازیم. زمان-تصویر موضوع جلد دوم\nکتاب خواهد بود. ازاین‌منظر، کارگردانان بزرگ سینما را\nنه‌تنها با نقاشان، معماران و موسیقی‌دانان بلکه حتی با متفکران مقایسه خواهیم کرد.", "image": null}, {"title": "روایت‌شناسی: شکل و کارکرد روایت", "description": "ساختارگرایی یکی از رایج‌ترین، و احتمالاً دیرپاترین، مکتب‌های روایت‌شناسی است.\nاین دیدگاه که به پیروی از ساختارگرایی در زبان‌شناسی پاگرفت، در پی تدوین\nقواعدی همچون دستور زبان برای بیش‌تر، اگر نگوییم همۀ، پدیده‌هاست؛ از زبان نوشتاری یا گفتاری گرفته تا بررسی متون (روایتی و\nغیرروایتی). نگرش جرالد پرینس در کتاب حاضر نیز آشکارا ساختار گرایانه است. این\nنکته به‌ویژه در فصل سوم این کتاب نمود شایان‌توجهی دارد. در این فصل، پرینس کوشیده است برای روایت، دستور زبانی وضع کند که بتواند ساختار روایت‌های\nپایه‌ (هسته‌ای) را توضیح دهد. فارغ از اینکه این\nتلاش، و تلاش ساختارگرایان به‌طور کلی، تا چه اندازه موفق بوده است، آشنایی با این دیدگاه فرصت مغتنمی برای فهم\nبهتر این نگرشِ مسلط را فراهم می‌آورد.\n\nپرینس از یکی از پیچیده‌ترین مفاهیم روایت‌شناسی، یعنی مسئلۀ راوی، آغاز می‌کند و با طرد برخی از تقسیم‌بندی‌های رایج، الگوی ساده‌تری برای انواع راوی در متنِ روایتی ارائه می‌دهد. تمایز میان روایت، روایت‌شده، روایت کردن، و روایت‌گری، که در فصل‌های بعدی این\nکتاب به تفصیل بررسی شده‌اند، از امتیازهای دیدگاه پرینس\nاست که گسترۀ واژگانی و مفهومیِ روایت‌شناسی را توسعه می‌دهد.", "image": null}, {"title": "نشانه شناسی شناختی در حیطۀ فیلم", "description": "نگرش نشانه‌شناختی به مطالعات سینمایی در دهه‌های شصت و\nهفتاد میلادی رواج گسترده‌ای داشت. از اواخر دهۀ هفتاد و با رواج\nعلوم شناختی، و به‌ویژه با معرفی نگرش نوشکل‌گرایی،\nاهمیت نشانه‌شناسی در مطالعات سینمایی کمرنگ شد. در این\nزمینه آثار دیوید بوردوِل و نوئل کرول و ادوارد برانیگان نقش مهمی داشتند. پرسش\nاصلی این نظریه‌پردازان سینمایی این بود که چرا مطالعات سینمایی باید زبان‌شناسی\nساختارگرا را الگوی نظری خود قرار دهد؟ این عده، در عوض، بر پایۀ\nعلوم شناختی و فلسفۀ تحلیلی، روش تازه‌ای  برای بحث دربارۀ ماهیت و کارکرد\nفیلم پیشنهاد کردند.\n\nوارن باکلند در این کتاب بر آن است تا نشان دهد که برخی نظریه‌پردازان حیطۀ فیلم، با استفاده از زبان‌شناسی گشتاری زایشی چامسکی به بررسی فیلم پرداخته‌اند. وی به‌این منظور، نخست طرحی کلی از نظریه‌های فیلم ارائه می‌دهد و سپس آثار افرادی هم چون میشل کولن، روژه اودن، فرانچسکو کاسه‌تی، و دومینیک شاتو را تشریح می‌کند. هدف همۀ این نظریه‌پردازان\nاروپایی این است که با اتکا بر زبان‌شناسی گشتاری زایشی چامسکی، \"دستور معیار\" فیلم را پی بریزند. به‌عبارت‌دیگر، باکلند بر آن است تا نشان دهد که در مطالعات سینمایی، در گرماگرم بحث‌های مطالعات فرهنگی و علوم اجتماعی، نوعی بازگشت به\nالگوهای زبان‌شناسی صورت گرفته و موفق هم بوده است.", "image": null}, {"title": "سفر نویسنده", "description": "نخستین\nبار جوزف کمبل بود که در دهۀ ۱۹۴۰ به اصول و مبانی\nاسطوره‌ای و کهن‌الگویی جاری در تمام داستان‌ها، حماسه‌ها و افسانه‌ها اشاره کرد.\nکتاب قهرمان هزارچهرۀ او درواقع شناسایی این الگوهاست. کمبل زبانی معیار را خلق\nکرد که ساختار کهن‌الگویی پنهان این سنت‌های روایی را آشکار می‌کند، و درعين‌حال\nبرای پیوند زدن این ساختارها و سنت‌های مختلف بسیار کارآمد است؛ الگویی که قادر\nاست ژرف‌ساخت اسطوره‌ای مشترک میان حماسه‌های ایرانی، افسانه‌های اسکاندیناویایی،\nاپرای آلمانی، تراژدی‌های یونانی و حتی علمی‌ــتخیلی‌های آمریکایی را شناسایی کند.\n\nکريستوفر\nووگلر در کتاب سفر نویسنده یک گام به جلو برمی‌دارد و پروژۀ کمبل را در عرصۀ\nفیلمنامه‌نویسی ادامه می دهد. او کارش را براساس «سفر قهرمان» بسط و پرورش می‌دهد\nو از آن برای تحلیل پیرنگ و تحول شخصیت در داستان استفاده می‌کند و نشان می‌دهد که\nچگونه این زبان در خلق داستان‌های موفق مؤثر است. او سفر را به هفت کهن‌الگو و\nدوازده مرحله تقسیم می‌کند. هفت کهن‌الگویی که او ارائه می‌کند عبارت‌اند از\nقهرمان، شخصيت محوری یا پروتاگونیست که نخستين هدفش جدا شدن از دنیای عادی است و\nما سفر را به‌واسطۀ او تجربه می‌کنیم؛ استاد، كه انگيزۀ لازم براي قهرمان فراهم می‌آورد\nو به قهرمان كمك می‌كند؛ نگهبان آستانه، كه مأمور حفظ و مراقبت جهان خاص از نفوذ\nقهرمان است و او را در بوتۀ آزمایش قرار می‌دهد تا به ميزان تعهدش پی‌ببرد؛ منادى،\nكه در طول سفر ‌می‌تواند هر لحظه ظاهر شوند، اما غالباً در ابتداى سفر ظاهر می‌شود\nتا قهرمان را به ماجراجويى دعوت كند و فرابخواند؛ متلون، كه با نقابش قهرمان را\nگمراه می‌كند؛ سايه، كه معرف تاریك‌ترين و ژرف‌ترين سويۀ اميال ماست؛ و درنهايت\nدغلباز، كه از خنده و لودگى استفاده می‌كند تا قهرمان را متوجه پوچى و بی‌معنايى\nموجود در واقعيت كند.", "image": null}, {"title": "سفر کارگردان", "description": "سفر کارگردان کتابی است آموزشی، به زبان ساده و\nکاربردی، برای یادگرفتن فن کارگردانی. کارگردانی به عنوان یک فن، مهارت یا صناعت،\nیعنی منظومه‌ای از مختصات و مؤلفه‌های عینی و عملی برای غلبه کردن بر مشکلات یک کار گروهی سخت و فشرده. این\nکتاب می‌کوشد مخرج مشترک تجربیات مختلف کارگردانی در سبک‌ها و وضعیت‌های مختلف\nباشد. *سفر کارگردان* کتابی است در باب آموزش کارگردانی استاندارد و معیار.\nهمچون دستورِ زبانی که می‌خواهد زبان معیار را تعریف و تبیین کند، اینجا هم با تعریف و صورتبندی کارگردانی معیار مواجه‌ایم؛ همان فن‌ومهارتی که عمدۀ محصولات سینمایی باید بر اساس آن ساخته\nشوند تا پیش از هر چیز دیدنی باشند، همان دانش اکتسابی و عامی\nکه برای کارگردانی یک فیلم تلویزیونی، ساختن یک فیلم سینمایی و خلق نحو و دستور\nمعیار سینما لازم و ضروری است.", "image": null}, {"title": "سایه‌های نوآر", "description": "سایه‌های نوآر یکی از جدی‌ترین دستاوردهای مطالعات میان‌رشته‌ای\nدر ادبیات سینمایی است. کتابی سرشار از ایده‌های فلسفی و تاریخی که در عین‌حال\nمفاهیم تثبیت‌شده دربارۀ فیلم نوآر، این مناقشه‌برانگیزترین مفهوم مطالعات سینمایی، را بی‌رحمانه به‌چالش می‌کشد. همچنین رد این مفهوم تا دورۀ پست مدرن و تجلی آم\nدر قاموس نئونوآر را هم دنبال و تحول مضمونی، تاریخی، فرمال و\nسیاسی این مفهوم در دورۀ جدید را هم بررسی می‌کند. آن هم از\nخلال کار فیلم‌سازانی همچون دیوید لینچ.\n\nسایه‌های نوآر سرشار از ایده‌پردازی‌های فلسفی و\nانتقادی جذاب است دربارۀ کلاسیک‌هایی همچون\nلانگ، وایلدر و چندلر و مملو از تحلیل‌های تاریخی، بدیع و اصیل دربارۀ منتقدانی که دربارۀ این مفهوم نظریه‌پردازی کرده‌اند از دیوید بوردول گرفته تا ریموند دورگنات و کامیاب در\nپیوند کمیاب و دیریاب نقد و نظریه.", "image": null}, {"title": "درآمدی بر روش‌شناسی هنر", "description": "وقتی\nجان راسکین، از بزرگ‌ترین منتقدان هنریِ قرن نوزدهم، تابلوهای نقاشی را توص‍يف می‌كند، از آمیزه‌ای منحصربه‌فرد از زبان و تصویر بهره می‌جويد، و اين\nراهبردی است که از خلق آنچه \"معادل شاعرانۀ نقاشــی\" می‌نامند، به‌دست آمده است.\nبااین‌همه، خواندن نوشتۀ راسکین، ضرورت دیدن آنچه را [که نوشــتۀ او] توصيف می‌كند، از میان نمی‌برد، ولو اينكه توصيف او قانع‌کننده باشد.\n\nاز سدۀ\nنوزدهم كه تاریخ هنر به‌عنوان رشته‌ای دانشگاهی تثبیت شــد، آثار هنری به‌شیوه‌هایی\nهردم متفاوت‌تر، تفسیر یا \"قرائت\" می‌شوند. رویكردهای متفاوت در تشریح و تفسیر هنر سازندۀ به‌اصطلاح روش‌شناسی‌های تحلیل هنری است. دقیقاً همین كثرت روش‌شناسی‌ها بازتاب همگرایی بسیاری سطوح معنایی متعدد در نگاره ای واحد است. و\nدرحالی که آنان که دربارۀ هنر مطلب می‌نویسند، غالباً سعی\nمی‌کنند بر اساس گرايشی كه بيش‌ازهمه با طبعشان جور\nاست به آثار هنری بپردازند، خوانندگان باید این نکته را به‌خاطر داشته باشند که\nبنا به خود ماهیت نگاره، هیچ رویکرد یکه‌ای را نمی‌توان قطعی و حرف آخر به‌شمار\nآورد. عوامل متفاوت بســیاری در خلق یک نگاره سهیم‌اند. آثار هنری، مانند رؤیاها\nبه‌شکلی چندگانه تعین می‌یابند.", "image": null}, {"title": "مسائل اساسی پدیدارشناسی", "description": "این درس‌گفتار بر عهدۀ خود می‌نهد که *مسائل اساسی پدیدارشناسی* را طرح کند، ورز دهد و مرحله‌مرحله به راه حلی نزدیک‌تر بیاورد. پدیدارشناسی\nباید از آن‌چه موضوع بحث می‌گیرد و شیوه‌ای که موضوعش را برمی‌رسد، مفهومِ خود را بپرورد. وجهۀ همت مقصور است بر *درون‌مایه و نظام درونی* مسائل اساسی. مقصود روشن‌گری اساس این مسائل است.\n\nبر این‌سان می‌خواهیم، نفیاً، بگوییم:\nسرِ آن نداریم که معلوم کنیم، به کردارِ مورخان، بر جریانی جدید در فلسفه، که بدان\nپدیدارشناسی می‌گویند، چه رفته است. از\nپدیدارشناسی نمی‌گوییم؛ از همان می‌گوییم که پدیدارشناسی، خود، از آن می‌گوید. این را نیز نمی‌خواهیم بدان هوا در\nشناخت بیاوریم که مگر خبر توانیم داد که پدیدارشناسی با این چیز و آن چیز سروکار\nدارد.\n\nهنوز هم از پدیدارشناسی گاه، حتی در خودِ\nپدیدارشناسی نیز، یک علم آلیِ فلسفی می‌خواهند که در زمینۀ ورود به فنونِ (دیسیپلین‌های) اصالیِ منطق،\nاخلاق، زیباشناسی و فلسفۀ دین را تدارک می‌کند. آنان که\nبدین‌سان پدیدارشناسی را علمی آلی می‌دانند، چهارچوب فنون فرادادِ\nفلسفی را دربست می‌پذیرند، بی‌آن‌که بپرسند مگر نه پدیدارشناسی خودِ این چهارچوب فنون فرادادِ فلسفی را\nدر معرض پرسش و تزلزل آورده‌است ــ‌آیا نه آن است که در پدیدارشناسی این امکان هست\nکه با سطحی‌شدن فلسفه در این فنون از طریق بازگشت به فرادهش بزرگ خودِ فلسفه\nمقابله و فرادهش را باز از رهگذر ازنوفراگیری گوهرِ پاسخ‌های اصیلش زنده کند. ما\nبرآنیم که پدیدارشناسی علمی ـ فلسفی در عرضِ دیگر فلسفی نیست، نیز علمی آلی ـ علمی\nاز بهرِ علومی دیگر، نیست بل اصطلاح \"پدیدارشناسی\" عنوان است بر خصوص\n\"روش فلسفۀ علمی به‌طورکلی\".", "image": null}, {"title": "تصویر و ذهن", "description": "هدف این کتاب این است که فیلم را به چیزهای دیگری ربط دهد: به هنرهای همانند و\nناهمانند؛ به اسلوب‌های بازنمایی همچون تصویر و زبان؛\nبه زمان و بازنمایی زمان؛‌ به روایت و ادراک روایت؛‌ به تخیل و باور؛ و به جهان\nواقعی. فیلم با همۀ این موارد رابطه‌ای جالب و بحث‌برانگیز\nدارد. اگر این رابطه را درست بفهمیم در مسیر فهم رسانۀ فیلم قرار می‌گیریم.\n\nاین کتابی فلسفی دربارۀ فیلم است. بهتر\nاست این سخنم را بیشتر توضیح بدهم تا برخی آن را نشانه‌ای کم‌رنگ بر\nظرافت و عمق مطلب ندانند و باطلش نشمارند. منظورم دقیقاً این است که روش این کتاب،\nکلی‌نگر و نظام‌ساز و استدلالی و مفهومی است. هدف این کتاب، رسیدن به نتایجی\nعام یعنی با حداکثر کلیت است نه تمرکز بر آثار و مکاتب و گونه‌های خاص؛ هدف، پیونددادن دو چیز است: یکی آنچه می‌توانیم دربارۀ فیلم بگوییم و دیگری آنچه (به‌نظر من) بهترین نظریۀ ما دربارۀ مابقی جهان است.\nبه‌این منظور گام‌به‌گام پیش خواهیم رفت و مقدمات و نتایج\nرا یک‌به یک طرح خواهیم کرد و نشان خواهیم داد چگونه از یکی به دیگری می‌رسیم. در\nاین مسیر، به تجزیه‌و‌تحلیل مفاهیم\nمبهم و پیچیده و پرسش‌برانگیزی همچون زبان و تصویر و بازنمایی و باور خواهیم\nپرداخت.", "image": null}, {"title": "تاریخ زیبایی شناسی جلد دوم: زیبایی‌شناسی قرون وسطی", "description": "کتابی که پیش رودارید از شناخته‌شده‌ترین آثار نزد پژوهشگران و علاقه‌مندان تاریخ زیبایی‌شناسی است.\nولادیسلاف تاتارکیویچ، نویسندۀ این کتاب، با دانشی گسترده در حیطه‌های گوناگون، از جمله فلسفه، زیبایی‌شناسی و تاریخ\nفرهنگ و هنر، گزارش تاریخی جامعی تدوین کرده که بر بیش‌تر تاریخ‌زیبایی‌شناسی تأثیر گذاشته است.\n\nآثار فراوان و گوناگونی در تاریخ‌زیبایی‌شناسی تألیف و\nمنتشر شده، اما در این میان سهم زیبایی‌شناسی‌\nقرون‌ وسطا بسیار اندک است. تاریخ‌دانان زیبایی‌شناسی غالباً چنین فرض می‌کردند که فیلسوفان و متألهان قرون وسطا بیش‌تر دل‌مشغول مباحث الاهیاتی\nو کلامی بوده‌اند و درنتیجه در آثار آن‌ها جایی برای زیبایی‌شناسی نبوده است. به\nنظر می‌رسد این دیدگاه، حداقل از جهاتی، درست است. زیبایی‌شناسی را، به معنای مضیّق و مدرن کلمه، به‌ندرت می‌توان در متون مربوط به قرون وسطا یافت. با وجود این، اگر زیبایی‌شناسی را به معنای موسّع آن در نظر بگیریم، با\nنتیجه‌ای کاملاً متفاوت روبه‌رو می‌شویم.\nاین همان کاری است که تاتارکیویچ در جلد دوم *تاریخ زیبایی‌شناسی* خود به آن\nهمت گمارده است.", "image": null}, {"title": "پژوهشی درباره فن شعر ارسطو", "description": "مفسران\nفنّ شعر از دیرباز به این اثر بیشتر به چشم انبانی از مسائل و مشکلات نگریسته‌اند تا یک اثر استدلالی متحدــ امری که با توجه به شکل کنونی متنِ باقی‌مانده، نخراشیده و بعضاً آسیب‌دیده، چندان هم تعجب‌انگیز نیست. اما این\nرویکرد، که پیشینه‌اش به عادت‌های پژوهشی شارحان ایتالیایی قرن شانزدهم بازمی‌گردد،\nقابلیت ما برای تشخیص ساختمان کلّی تفکر شعری ارسطو را دستکم میگیرد.\n\nمطالعۀ دقیق *فنّ شعر*، به‌ویژه هنگامی که\nبررسی بخش‌های مربوطِ سایر آثار ارسطوــ‌ مهمتر از همه، رساله‌های فنّ خطابه (بحث عاطفه و احساس)، سیاست (بحث تعلیم و تربیت موسیقایی)، و اخلاق (بحث\nروانشناسی اخلاقی)ــ‌ پشتیبان آن باشد، می‌تواند نشانه‌های\nشالودۀ یک «زیبایی‌شناسی» بزرگتر را\nبه دست دهد، زیبایی‌شناسی‌ای که افزون بر شعر، هنرهای بصری، موسیقی و رقص را نیز\nدر بر میگیرد و بنیادهایش هنوز شایستۀ توجه دقیق است، بخشی به دلیل پرهیز آن از\nگرایش به قطب‌های متضاد اخلاق‌باوری و فرمالیسم/ زیبایی‌باوری.", "image": null}, {"title": "آیا مدرنیسم شکست خورده است؟", "description": "جامعۀ مدرن تنها در یک صحنۀ دستخوش تطور یعنی غرب ظهور کرد. این جامعه مظهر\nواژگونی نظام‌مند ارزش‌هایی است که مردمان جوامع سنتی پیوسته بدانها اعتقاد می‌ورزیده‌اند.\nظهور هنر مدرن در دهه‌های نخست قرن بیستم نتیجۀ به هم پیوستن آرا و اندیشه‌های\nتشکل‌بخشی بود که ساختار بنیادین جامعۀ مدرن را ساخته‌اند. معنویت‌زدایی از جهان و\nپس زدن امر قدسی از طریق فرایند عقلانی‌کردن امور بشری، فردگرایی، دیوان‌سالاری و\nکثرت‌گرایی که هستۀ مدرنیته را شکل داده‌اند بر منش اجتماعی امر مدرن و سرنوشت هنر\nتأثیر تعیین‌کننده به جا گذاشته‌اند و موجد ظهور جهان مدرن از بطن اسلاف آن گشته‌اند.\nویژگی‌های جهان هنر به‌تدریج از یک ساختار قدرت بی‌شکل به ساختار قدرت روشن و مشخص\nو حائز ارزش‌های تشکیلاتی و گروهی وضوح‌یافته بدل شده است. در نهایت موضوع اصلی\nاین مقالات پیامدهای این جابجایی است.", "image": null}];
+
+        // تطبیق عنوان‌های ارسالی با داده‌های موجود سایت.
+        const heroBooks = heroEntries.map(entry => {
+            const existing = books.find(book => book.title === entry.title);
+            return {
+                ...entry,
+                year: existing ? existing.year : null,
+                image: entry.image || (existing ? existing.image : entry.title + ".jpg")
+            };
+        });
+
+        // ===== هدر =====
+        let currentHero = 0;
+        const heroTitle = document.getElementById("heroTitle");
+        const heroDesc = document.getElementById("heroDesc");
+        const heroYear = document.getElementById("heroYear");
+        const heroImg = document.getElementById("heroImg");
+        const heroText = document.getElementById("heroText");
+        const heroCover = document.getElementById("heroCoverContainer");
+        const heroCoverBox = document.getElementById("heroCoverBox");
+        const heroDots = document.getElementById("heroDots");
+
+        function toPersianDigits(value) {
+            if (value === null || value === undefined || value === "") return "";
+            return String(value).replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+        }
+
+        function applyNumberFont() {
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+            const textNodes = [];
+            while (walker.nextNode()) textNodes.push(walker.currentNode);
+            textNodes.forEach(node => {
+                if (node.parentElement.closest("script, style, .number")) return;
+                const value = toPersianDigits(node.nodeValue);
+                if (!/[۰-۹]/.test(value)) {
+                    node.nodeValue = value;
+                    return;
+                }
+
+                const fragment = document.createDocumentFragment();
+                value.split(/([۰-۹]+)/).forEach(part => {
+                    if (!part) return;
+                    if (/^[۰-۹]+$/.test(part)) {
+                        const number = document.createElement("span");
+                        number.className = "number";
+                        number.textContent = part;
+                        fragment.appendChild(number);
+                    } else {
+                        fragment.appendChild(document.createTextNode(part));
+                    }
+                });
+                node.parentNode.replaceChild(fragment, node);
+            });
+        }
+
+        function renderHero(index) {
+            currentHero = (index + heroBooks.length) % heroBooks.length;
+            const book = heroBooks[currentHero];
+
+            heroText.style.opacity = "0";
+            heroCover.style.opacity = "0";
+            heroText.style.transform = "translateY(7px)";
+            heroCover.style.transform = "translateY(7px)";
+
+            setTimeout(() => {
+                heroTitle.textContent = book.title;
+                heroDesc.textContent = toPersianDigits(book.description);
+                const heroPublication = publicationInfo[book.title];
+                if (book.year && heroPublication) {
+                    const parts = [`سال انتشار: ${toPersianDigits(book.year)}`];
+                    if (heroPublication.stopYear) {
+                        parts.push(`توقف انتشار: ${toPersianDigits(heroPublication.stopYear)}`);
+                    }
+                    if (heroPublication.secondEdition) {
+                        parts.push(`چاپ دوم: ${toPersianDigits(heroPublication.secondEdition)}`);
+                    }
+                    if (heroPublication.author) {
+                        parts.push(`نویسنده: ${heroPublication.author}`);
+                    }
+                    if (heroPublication.role && heroPublication.person) {
+                        parts.push(`${heroPublication.role}: ${heroPublication.person}`);
+                    }
+                    heroYear.innerHTML = parts.join(" &nbsp; | &nbsp; ");
+                } else {
+                    heroYear.textContent = book.year ? `سال انتشار: ${toPersianDigits(book.year)}` : "مجموعه";
+                }
+                heroImg.src = book.image;
+                heroImg.alt = book.title;
+                heroCoverBox.classList.toggle(
+                    "collection-cover",
+                    book.title === "مجموعۀ شناخت ایالات متحده آمریکا"
+                );
+
+                heroText.style.opacity = "1";
+                heroCover.style.opacity = "1";
+                heroText.style.transform = "translateY(0)";
+                heroCover.style.transform = "translateY(0)";
+                renderDots();
+                applyNumberFont();
+            }, 180);
+        }
+
+        function renderDots() {
+            heroDots.innerHTML = "";
+            heroBooks.forEach((_, index) => {
+                const dot = document.createElement("button");
+                dot.className = "dot" + (index === currentHero ? " active" : "");
+                dot.type = "button";
+                dot.setAttribute("aria-label", `اثر ${toPersianDigits(index + 1)}`);
+                dot.addEventListener("click", () => {
+                    renderHero(index);
+                    resetHeroTimer();
+                });
+                heroDots.appendChild(dot);
+            });
+        }
+
+        document.getElementById("heroPrev").addEventListener("click", () => {
+            renderHero(currentHero - 1);
+            resetHeroTimer();
+        });
+
+        document.getElementById("heroNext").addEventListener("click", () => {
+            renderHero(currentHero + 1);
+            resetHeroTimer();
+        });
+
+        let heroTimer = setInterval(() => renderHero(currentHero + 1), 8000);
+
+        function resetHeroTimer() {
+            clearInterval(heroTimer);
+            heroTimer = setInterval(() => renderHero(currentHero + 1), 8000);
+        }
+
+        renderHero(0);
+
+        // ===== فهرست آثار =====
+        const PAGE_SIZE = 15;
+
+        const tabatabaeiBooks = books
+            .filter(book => tabatabaeiTitles.has(book.title))
+            .sort((a, b) => a.year - b.year);
+
+        const otherBooks = books
+            .filter(book => !tabatabaeiTitles.has(book.title))
+            .sort((a, b) => a.year - b.year);
+
+        // ===== اطلاعات توقف انتشار و مترجم/مؤلف آثار مشخص‌شده =====
+        const publicationInfo = {
+            "بودلر بنیامین": { stopYear: 1401, author: "", role: "مترجم", person: "مراد فرهادپور و امیدمهرگان" },
+            "پرسش‌هایی از مارکس": { stopYear: 1401, author: "تری ایگلتون", role: "مترجم", person: "رحمان بوذری و صالح نجفی" },
+            "ایده - تئاتر": { stopYear: 1401, author: "آلن بدیو و دیگران", role: "مترجم", person: "امیر کیان‌پور" },
+            "سینما ۱": { stopYear: 1400, author: "ژیل دلوز", role: "مترجم", person: "مازیار اسلامی" },
+            "آیا دموکراسی در آمریکا ممکن است؟": { stopYear: 1401, author: "رونالد دورکین", role: "", person: "" },
+            "کاوش در مبانی اخلاق": { stopYear: 1401, author: "دیوید هیوم", role: "مترجم", person: "مرتضی مردیها" },
+            "تاریخچۀ خوشبختی": { stopYear: 1401, author: "نیکلاس وایت", role: "مترجم", person: "خشایار دیهیمی" },
+            "زیبایی": { stopYear: 1401, author: "راجر اسکروتن", role: "مترجم", person: "فریده فرنودفر و امیر نصری", editor: "هومن پناهنده" },
+            "ضرورت تئاتر": { stopYear: 1401, author: "پال وودارف", role: "مترجم", person: "بهزاد قادری" },
+            "چرا روشنفکران لیبرالیسم را دوست ندارند؟": { stopYear: 1401, author: "رمون بودُن", role: "مترجم", person: "مرتضی مردیها" },
+            "گذشتۀ تحریف شده: تفسیر دوبارۀ اروپا": { stopYear: 1401, author: "جوزپه فونتانا", role: "مترجم", person: "افشین خاکباز" },
+            "تولد اروپا": { stopYear: 1401, author: "ژاک لوگوف", role: "مترجم", person: "احد علیقلیان" },
+            "تاریخ زیبایی شناسی جلد دوم: زیبایی‌شناسی قرون وسطی": { author: "ولادیسلاف تاتارکیویچ", role: "مترجم", person: "هادی ربیعی" },
+            "روشنفکری: آگاهی کاذب و ایده‌ئولوژی": { author: "هومن قاسمی", role: "مؤلف", person: "" },
+            "گفتارهایی در معرفت‌شناسی علم اقتصاد": { stopYear: 1401, author: "", role: "مؤلف", person: "موسی غنی نژاد" },
+            "گفتارهایی در روش‌شناسی علم اقتصاد": { stopYear: 1401, author: "", role: "مؤلف", person: "موسی غنی نژاد" },
+            "سرانجام انسان طراز نوین": { stopYear: 1401, author: "سوِتلانا الکسیویچ", role: "مترجم", person: "مهشید معیری و موسی غنی نژاد" },
+            "جامعه مدنی": { stopYear: 1401, author: "", role: "مؤلف", person: "موسی غنی نژاد" },
+            "مغالطات و سنجش استدلال": { stopYear: 1405, author: "کریستوفر دابلیو. تیندیل", role: "", person: "" },
+
+            "آموختن فلسفه ورزی": { author: "دل کی‌یرنان لوئیس", role: "مترجم", person: "خدیجه حسینی" },
+            "آیا مدرنیسم شکست خورده است؟": { author: "سوزی گابلیک", role: "مترجم", person: "فتاح محمدی" },
+            "بعداز نقد‌نو": { author: "فرانک لنتریچیا", role: "مترجم", person: "مشیت علایی" },
+            "بوطیقای ساختگرا": { author: "جاناتان کالر", role: "مترجم", person: "کوروش صفوی" },
+            "پانوفسکی و بنیادهای تاریخ هنر": { author: "مایکل آن‌هالی", role: "مترجم", person: "عباس سُمی" },
+            "پژوهشی درباره فن شعر ارسطو": { author: "استیون هالیول", role: "مترجم", person: "مهدی نصراله‌زاده" },
+            "تابستان انقلابی": { author: "جوزف. جِی. الیس", role: "مترجم", person: "مسعود عالمی" },
+            "تاریخ اجتماعی سینمای ایران": { author: "حمید نفیسی", role: "مترجم", person: "محمد شهبا" },
+            "تصویر و ذهن": { author: "گریگوری کوری", role: "مترجم", person: "محمد شهبا" },
+            "جنبش پدیدارشناسی": { author: "هربرت اسپیگلبرگ", role: "مترجم", person: "مسعود علیا" },
+            "داستایفسکی پس از باختین": { author: "مَلکُم‌وی. جونز", role: "مترجم", person: "امید نیک‌فرجام" },
+            "درآمدی به علم هرمنوتیک فلسفی": { author: "ژان گروندن", role: "مترجم", person: "محمدمهدی حنایی‌کاشانی" },
+            "راهنمای تفکر نقادانه پرسیدن سوال‌های به‌جا": { author: "ام. نیل‌براون، استوارت ام. کیلی", role: "مترجم", person: "کورش کامیاب" },
+            "روایت‌شناسی: شکل و کارکرد روایت": { author: "جرالد پرینس", role: "مترجم", person: "محمد شهبا" },
+            "روایت‌ها و راوی‌ها": { author: "گریگوری کوری", role: "مترجم", person: "محمد شهبا" },
+            "درآمدی بر روش‌شناسی هنر": { author: "لوری اشنایدر آدامز", role: "مترجم", person: "شهریار وقفی‌پور", editor: "هومن پناهنده" },
+            "روشنفکران فرانسوی ۱۹۵۶-۱۹۴۴": { author: "تونی جات", role: "مترجم", person: "محسن قائم مقامی" },
+            "ژانرهای سینمایی": { author: "رافائل موان", role: "مترجم", person: "علی عامری مهابادی" },
+            "سایه‌های نوآر": { author: "جوآن کوپژک", role: "مترجم", person: "مازیار اسلامی" },
+            "سفر کارگردان": { author: "مارک تراویس", role: "مترجم", person: "رحیم قاسمیان" },
+            "سفر نویسنده": { author: "کریستوفر ووگلر", role: "مترجم", person: "محمد گذرآبادی" },
+            "سیاه‌تر از شب": { author: "جیمز نرمور", role: "مترجم", person: "محمّد جواد مظفریان" },
+            "عکاسی": { author: "لیز ولز", role: "مترجم", person: "سولماز ختایی‌لر، ویدا قدسی‌راثی، مهران مهاجر، محمد نبوی" },
+            "علم جامعه اخلاق": { author: "", role: "گردآوری، ترجمه و ویرایش", person: "حسین شیخ‌رضایی، امیراحسان کرباسی‌زاده" },
+            "قرآن تامس جفرسون": { author: "دنیس آ. اسپلبرگ", role: "مترجم", person: "مسعود عالمی" },
+            "گزیده مقالات روایت": { author: "مارتین مکوئیلان", role: "مترجم", person: "فتاح محمدی" },
+            "متفکران چپ نو": { author: "راجر اسکروتن", role: "مترجم", person: "بابک واحدی" },
+            "مسائل اساسی پدیدارشناسی": { author: "مارتین هیدگر", role: "مترجم", person: "پرویز ضیاء‌شهابی" },
+            "مشروطیت قدیم و جدید": { author: "چارلز هاورد مک‌ایل‌وین", role: "مترجم", person: "پروانه شعبانی", secondEdition: 1405 },
+            "مفاهیم بنیادی تاریخ هنر": { author: "رابرت اس. نلسون و ریچارد شیف", role: "مترجم", person: "مهران مهاجر و محمد نبوی" },
+            "مقالات فدرالیست": { author: "الکساندر همیلتن، جیمز مدیسن، جان‌جی", role: "مترجم", person: "مسعود عالمی" },
+            "مقدمه‌ای بر روایت در ادبیات و سینما": { author: "یاکوب لوته", role: "مترجم", person: "امید نیک‌فرجام" },
+            "نشانه شناسی شناختی در حیطۀ فیلم": { author: "وارن باکلند", role: "مترجم", person: "محمد شهبا" },
+            "نظریه و تحلیل درام": { author: "مانفرد فیستر", role: "مترجم", person: "مهدی نصراله‌زاده" },
+            "نظریۀ هنر آوانگارد": { author: "پیتر بورگر", role: "مترجم", person: "مجید اخگر" },
+            "نمایان با ماسک": { author: "پیتر هال", role: "مترجم", person: "آرا بزمی، مهدی عاطف‌راد" }
+        };
+
+        function bookCard(book, isTabatabaei) {
+            const publication = publicationInfo[book.title];
+            const publicationYear = toPersianDigits(book.year);
+
+            const meta = isTabatabaei
+                ? (publication
+                    ? `<div class="book-meta publication-meta">
+                           ${publication.author ? `<span>نویسنده: ${publication.author}</span>` : ""}
+                           ${publication.role && publication.person ? `<span>${publication.role}: ${publication.person}${publication.editor ? ` &nbsp; | &nbsp; ویراستار: ${publication.editor}` : ""}</span>` : (publication.editor ? `<span>ویراستار: ${publication.editor}</span>` : "")}
+                       </div>`
+                    : "")
+                : publication
+                    ? `<div class="book-meta publication-meta">
+                           <span>سال اولین چاپ: ${publicationYear}${publication.stopYear ? ` &nbsp; | &nbsp; <span class="stop">توقف انتشار: ${toPersianDigits(publication.stopYear)}</span>` : ""}${publication.secondEdition ? ` &nbsp; | &nbsp; چاپ دوم: ${toPersianDigits(publication.secondEdition)}` : ""}</span>
+                           ${publication.author ? `<span>نویسنده: ${publication.author}</span>` : ""}
+                           ${publication.role && publication.person ? `<span>${publication.role}: ${publication.person}${publication.editor ? ` &nbsp; | &nbsp; ویراستار: ${publication.editor}` : ""}</span>` : (publication.editor ? `<span>ویراستار: ${publication.editor}</span>` : "")}
+                       </div>`
+                    : `<div class="book-meta other-meta">
+                           <span>سال اولین چاپ: ${publicationYear}</span>
+                       </div>`;
+
+            return `
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="${book.image}" alt="${book.title}" loading="lazy"
+                             onerror="this.style.opacity='0.12';">
+                    </div>
+                    <div class="book-info">
+                        ${meta}
+                        <h3>${book.title}</h3>
+                    </div>
+                </article>
+            `;
+        }
+
+
+        function renderCatalog(items, gridId, paginationId, isTabatabaei) {
+            const grid = document.getElementById(gridId);
+            const pagination = document.getElementById(paginationId);
+            let page = 1;
+            const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+
+            function draw() {
+                const start = (page - 1) * PAGE_SIZE;
+                const visible = items.slice(start, start + PAGE_SIZE);
+                grid.innerHTML = visible.map(book => bookCard(book, isTabatabaei)).join("");
+
+                pagination.innerHTML = "";
+                if (totalPages <= 1) {
+                    applyNumberFont();
+                    return;
+                }
+
+                const prev = document.createElement("button");
+                prev.type = "button";
+                prev.textContent = "‹";
+                prev.disabled = page === 1;
+                prev.addEventListener("click", () => { page--; draw(); });
+                pagination.appendChild(prev);
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "page-num" + (i === page ? " active" : "");
+                    btn.textContent = toPersianDigits(i);
+                    btn.addEventListener("click", () => { page = i; draw(); });
+                    pagination.appendChild(btn);
+                }
+
+                const next = document.createElement("button");
+                next.type = "button";
+                next.textContent = "›";
+                next.disabled = page === totalPages;
+                next.addEventListener("click", () => { page++; draw(); });
+                pagination.appendChild(next);
+                applyNumberFont();
+            }
+
+            draw();
+        }
+
+        renderCatalog(tabatabaeiBooks, "tabatabaeiGrid", "tabatabaeiPagination", true);
+        renderCatalog(otherBooks, "otherWorksGrid", "otherWorksPagination", false);
+        applyNumberFont();
+
+    </script>
+</body>
+</html>
